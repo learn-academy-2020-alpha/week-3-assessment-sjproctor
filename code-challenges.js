@@ -3,7 +3,15 @@
 
 // --------------------1) Create a function that returns the first 10 numbers of the Fibonacci sequence in an array. Expected output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
-
+const getFibRecursion = (num) => {
+	if(num === 1){
+		return [1, 1]
+	} else {
+		let fibArray = getFibRecursion(num - 1)
+  	return [...fibArray, fibArray[num-1] + fibArray[num-2]]
+	}
+}
+console.log(getFibRecursion(10))
 
 
 // --------------------2) Create a function that takes in an array and returns a new array of only odd numbers sorted from least to greatest.
